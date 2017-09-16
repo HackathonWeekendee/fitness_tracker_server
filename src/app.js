@@ -34,4 +34,4 @@ app.get('/users', userModel.getAllUsers(db))
 app.get('/user/:user_id', userModel.getUserByUserId(db, mongojs))
 app.post('/user', userModel.createNewUser(db))
 
-app.listen(8001)
+app.listen(config.PORT)
