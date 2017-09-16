@@ -7,8 +7,7 @@ const mongojs = require('mongojs')
 const app = express()
 const userModel = require('./user.model')
 const goalModel = require('./goal.model')
-
-// const Leaderboard = require('mongoleaderboard')
+const Leaderboard = require('mongoleaderboard')
 
 app.use(morgan('combined'))
 app.use(bodyParser.json())
@@ -20,8 +19,15 @@ app.use(cors())
 const dbUrl = `${config.db.options.protocol}${config.db.username}:${config.db.password}${config.db.options.qualifier}`
 const collections = config.db.options.collections
 const db = mongojs(dbUrl, collections)
-// const leaderboardOptions = config.leaderboard.options
-// const leaderboard = new Leaderboard(dbUrl, leaderboardOptions)
+const leaderboardOptions = config.leaderboard.options
+const leaderboard = new Leaderboard(dbUrl, leaderboardOptions)
+
+app.get('/leaderboard', (req, res) => {
+  leaderboard.get(data => {
+    console.log(data)
+    res.send(data)
+  })
+})
 
 /* sample api */
 app.get('/goals', goalModel.getAllGoals(db))
