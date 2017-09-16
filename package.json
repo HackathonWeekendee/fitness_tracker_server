@@ -8,6 +8,7 @@
     "cors": "^2.8.4",
     "express": "^4.15.4",
     "mongojs": "^2.4.1",
+    "mongoleaderboard": "0.0.13",
     "morgan": "^1.8.2"
   },
   "devDependencies": {
