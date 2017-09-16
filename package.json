@@ -1,0 +1,32 @@
+{
+  "name": "fitness_tracker_server",
+  "version": "1.0.0",
+  "description": "Fitness tracker server repo for hackathon",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "mongojs": "^2.4.1",
+    "morgan": "^1.8.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HackathonWeekendee/fitness_tracker_server.git"
+  },
+  "keywords": [
+    "hackathon",
+    "server",
+    "fitness-tracker"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HackathonWeekendee/fitness_tracker_server/issues"
+  },
+  "homepage": "https://github.com/HackathonWeekendee/fitness_tracker_server#readme"
+}
