@@ -2,7 +2,7 @@
   "name": "fitness_tracker_server",
   "version": "1.0.0",
   "description": "Fitness tracker server repo for hackathon",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "body-parser": "^1.18.1",
     "cors": "^2.8.4",
