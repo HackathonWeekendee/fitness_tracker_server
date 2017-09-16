@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "8.3.0"
+  },
   "name": "fitness_tracker_server",
   "version": "1.0.0",
   "description": "Fitness tracker server repo for hackathon",
