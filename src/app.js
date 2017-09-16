@@ -5,10 +5,12 @@ const morgan = require('morgan')
 const config = require('../config')
 const mongojs = require('mongojs')
 const app = express()
-
+const userModel = require('./user.model')
 app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
+// app.use(`${config.app.api}/${config.app.version}/`)
+// app.use('api/1.0.0/')
 
 /* connecting to database on m-lab */
 const dbUrl = `${config.db.options.protocol}${config.db.username}:${config.db.password}${config.db.options.qualifier}`
@@ -46,16 +48,16 @@ app.get('/user/:user_id', (req, res) => {
 })
 
 app.post('/user', (req, res) => {
-  const user = {
-    name: req.body.name,
-    age: req.body.age,
-    dob: req.body.dob,
-    height: req.body.height,
-    weight: req.body.weight,
-    step_target: req.body.step_target,
-    cycling_target: req.body.cycling_target,
-    swim_target: req.body.swim_target
-  }
+  const user = userModel.createUser(
+    req.body.name,
+    req.body.age,
+    req.body.dob,
+    req.body.height,
+    req.body.weight,
+    req.body.step_target,
+    req.body.cycling_target,
+    req.body.swim_target
+  )
   console.log(user)
 
   const error = `Failed at user creation.`

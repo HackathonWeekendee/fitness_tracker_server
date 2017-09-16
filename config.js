@@ -1,4 +1,8 @@
 module.exports = {
+    app: {
+      api: 'api',
+      vesion: '1.0.0'
+    },
     PORT: process.env.PORT || 8081,
     db: {
       database: process.env.DB_NAME || 'fitness_tracker',
@@ -12,11 +16,10 @@ module.exports = {
         ],
         protocol: 'mongodb://',
         qualifier: '@ds139984.mlab.com:39984/fitness_tracker'
-        
+
       }
     },
     auth: {
       jwtSecret: process.env.JWT_SECRET || 'fitness_tracker_server'
     }
   }
-  

@@ -1,14 +1,16 @@
-class User {
-  constructor (name, age, dob, height, weight, stepTarget, cyclingTarget, swimTarget) {
-    this.name = name
-    this.age = age
-    this.dob = dob
-    this.height = height
-    this.weight = weight
-    this.step_target = stepTarget
-    this.cycling_target = cyclingTarget
-    this.swim_target = swimTarget
+function createUser (name, age, dob, height, weight, stepTarget, cyclingTarget, swimTarget) {
+  return {
+    name: name,
+    age: age,
+    dob: dob,
+    height: height,
+    weight: weight,
+    step_target: stepTarget,
+    cycling_target: cyclingTarget,
+    swim_target: swimTarget
   }
 }
 
-module.exports = User
+module.exports = {
+  createUser
+}
